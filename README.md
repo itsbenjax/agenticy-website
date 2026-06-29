@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Agenticy.io
 
-## Getting Started
+**Agentes de IA Empresariales con infraestructura 100% local.** Hardware de última tecnología, sin dependencia de APIs externas.
 
-First, run the development server:
+[![Deploy Status](https://img.shields.io/badge/deploy-Vercel-black?logo=vercel)](https://agenticy-website.vercel.app)
+[![Stack](https://img.shields.io/badge/stack-Next.js%2016%20%2B%20TypeScript%20%2B%20Tailwind-black)](https://nextjs.org)
+
+## 🌐 Producción
+
+**[agenticy-website.vercel.app](https://agenticy-website.vercel.app)**
+
+## 📦 Stack
+
+- **Next.js 16** (App Router + Turbopack)
+- **TypeScript** estricto
+- **Tailwind CSS** con sistema de diseño personalizado
+- **Framer Motion** para animaciones
+- **Zod** para validación
+- **Vercel** para deploy con CI/CD
+
+## 🗺️ Rutas
+
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Homepage (Hero, Stats, Servicios, Roles, Proceso, Hardware, Contacto) |
+| `/soluciones/agentes-ia` | Agentes de IA Empresariales |
+| `/soluciones/rag-empresarial` | RAG Empresarial |
+| `/soluciones/servicios-globales` | Servicios Globales Presenciales |
+| `/soluciones/capacitacion` | Capacitación Presencial |
+| `/pricing` | 4 Tiers + FAQ |
+| `/calculadora-roi` | Calculadora interactiva |
+| `/roles` | 32 roles con filtros |
+| `/privacidad` | Política de Privacidad |
+| `/terminos` | Términos y Condiciones |
+| `/api/contact` | POST — Formulario de contacto |
+| `/api/roi` | POST — Cálculo de ROI |
+
+## 🎨 Diseño
+
+- **Liquid Glass:** `backdrop-filter: blur(22px)` + saturate + inset highlights
+- **Per-section gradients:** Violeta, Cyan, Emerald, Ámbar alternándose
+- **On-scroll reveal:** IntersectionObserver con delays staggered
+- **Contadores animados, spotlight cards, floating orbs**
+- **Responsive:** Mobile-first con glass-dark nav
+
+## 🏗️ Desarrollo Local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # Build de producción
+npm run lint       # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/                    # App Router (13 rutas + APIs)
+│   ├── api/contact/        # POST /api/contact
+│   ├── api/roi/            # POST /api/roi
+│   ├── soluciones/         # 4 páginas de servicio
+│   ├── pricing/            # Precios + FAQ
+│   ├── calculadora-roi/    # Calculadora interactiva
+│   ├── roles/              # 32 roles reemplazables
+│   ├── privacidad/         # Política de privacidad
+│   ├── terminos/           # Términos y condiciones
+│   ├── layout.tsx          # Root layout + SEO
+│   └── page.tsx            # Homepage
+├── components/
+│   ├── layout/             # Header, Footer
+│   ├── sections/           # ContactForm, SolutionPage
+│   └── ui/                 # GlassCard, GlassButton, SectionHeading, etc.
+├── data/                   # services, roles, pricing, faq, navigation
+└── lib/                    # validators, rate-limit, metadata, ROI calc
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Deploy
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push a `main` dispara deploy automático en Vercel. Build time: ~42s.
