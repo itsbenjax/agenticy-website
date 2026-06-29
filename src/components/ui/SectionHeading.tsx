@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 type SectionHeadingProps = {
   /** Small uppercase label above the heading (optional) */
   eyebrow?: string;
